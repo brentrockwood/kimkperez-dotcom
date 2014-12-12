@@ -1,13 +1,13 @@
 #! ./node_modules/coffee-script/bin/coffee
 
+Monitor with New Relic.
+
+    require 'newrelic'
+
 Main entry point for the application.
 
     express = require 'express'
     app = express()
-
-Monitor with New Relic.
-
-    require 'newrelic'
 
 Compile and cache the html.
 
