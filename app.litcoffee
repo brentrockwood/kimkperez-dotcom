@@ -1,10 +1,14 @@
 #! ./node_modules/coffee-script/bin/coffee
 
+Main entry point for the application.
+
+    env = process.env['NODE_ENV'] || 'development'
+
 Monitor with New Relic.
 
     require 'newrelic'
 
-Main entry point for the application.
+Create the express app.
 
     express = require 'express'
     app = express()
@@ -25,6 +29,11 @@ Compile and cache the css.
     less.render lessSrc, (err, result) ->
       if err then throw err
       css = result
+
+Logging.
+
+    logformat = if env is 'development' then 'dev' else 'default'
+    app.use express.logger(logformat)
 
 Serve static files.
 
