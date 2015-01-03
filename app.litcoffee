@@ -60,10 +60,6 @@ Allow clients to cache for one day.
       res.setHeader 'cache-control', 'public, max-age=' + ONE_DAY
       next()
 
-    app.use (req, res, next) ->
-      console.log req.headers
-      next()
-
 ## Routes
 
 Serve static files...
