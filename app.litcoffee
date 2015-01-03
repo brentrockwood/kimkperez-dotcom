@@ -37,7 +37,7 @@ Logging.
 
 Serve static files.
 
-    app.use express.static('./public')
+    app.use express.static('./static')
 
 Routes.
 
